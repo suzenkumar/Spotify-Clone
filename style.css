@@ -1,222 +1,277 @@
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    /* scrollbar-width: none; Firefox */
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
-
-/* ::-webkit-scrollbar {
-    display: none; 
-} */
 
 body {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
+.logo img {
+  width: 130px;
+}
+
+span {
+  margin-right: 14px;
+  color: #b3b3b3;
+  font-weight: 500;
+  font-size: 18px;
+}
 
 .left {
-    width: 25vw;
-    padding: 10px;
+  width: 25vw;
+  padding: 10px;
 }
 
 .right {
-    width: 75vw;
-    margin: 16px 0;
-    overflow-y: auto;
+  width: 75vw;
+  margin: 16px 0;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 /* Sidebar Menu */
 .home ul li {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 14px 0;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-li img {
-    width: 20px;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 14px 0;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .heading {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-    padding: 23px 14px;
-    font-weight: bold;
-    align-items: center;
-    font-size: 13px;
-}
-
-.heading img {
-    width: 30px;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  padding: 23px 14px;
+  font-weight: bold;
+  align-items: center;
+  font-size: 13px;
 }
 
 .library {
-    min-height: 80vh;
-    position: relative;
+  min-height: 80vh;
+  position: relative;
 }
+
+/* .footer {
+  display: flex;
+  font-size: 10px;
+  color: grey;
+  gap: 13px;
+  position: absolute;
+  bottom: 0;
+  padding-top: 34px;
+  flex-wrap: wrap;
+} */
 
 .footer {
-    display: flex;
-    font-size: 10px;
-    color: grey;
-    gap: 13px;
-    position: absolute;
-    bottom: 0;
-    padding-top: 34px;
-    flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25vw; /* same as .left sidebar */
+  font-size: 10px;
+  color: grey;
+  background-color: #121212;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 1000;
 }
 
+
 .footer a {
-    color: grey;
-    text-decoration: none;
+  color: grey;
+  text-decoration: none;
+}
+
+.footer :hover{
+    color: white;
+    font-size: bold;
+
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(34 34 34);
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
 }
 
-.header>* {
-    padding: 20px;
+.header > * {
+  padding: 20px;
 }
 
 .spotifyPlaylists {
-    padding: 16px;
+  padding: 16px;
+  background-color: #1b1b1b;
 }
 
 .cardContainer {
-    margin: 30px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    overflow-y: scroll;
-    max-height: 80vh;
-    scrollbar-width: none;
+  margin: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .cardContainer::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.card {
-    width: 200px;
-    padding: 10px;
-    background-color: #252525;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s;
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 20px 0;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.item {
+  background-color: #181818;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  color: #fff;
 }
 
-.card>* {
-    padding-top: 10px;
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-.card img {
-    width: 100%;
-    border-radius: 5px;
-    object-fit: cover;
+.item img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .play {
-    width: 40px;
-    height: 40px;
-    background-color: #1fdf64;
-    /* Spotify green */
-    border-radius: 50%;
-    border: 2px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 160px;
-    right: 20px;
-    cursor: pointer;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 130px;
+  right: 20px;
+  background-color: #E54D94;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  
 }
 
-/* Show play button on hover */
-.card:hover .play {
-    opacity: 1;
-    transform: scale(1) rotate(5deg);
-}
-
-/* On hover over the play button itself */
-.play:hover {
-    background-color: #1ed760;
-    transform: scale(1.1) rotate(10deg);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+.play .fa-play {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
 }
 
 
-.play:hover {
-    transform: scale(1.1);
+.item:hover .play {
+  opacity: 1;
 }
 
-.play svg {
-    width: 16px;
-    height: 16px;
-    fill: black;
+.play .fa-play {
+  color: white;
+  font-size: 16px;
+  align-items: center;
 }
 
-.button>* {
-    margin: 0 12px;
+.item h4 {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
 }
 
+.item p {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.button > * {
+  margin: 0 12px;
+}
+
+.installbtn,
 .signupbtn {
-    background-color: rgb(34 34 34);
-    color: rgb(91, 91, 91);
-    font-weight: bold;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
+  background-color: black;
+  color: #5b5b5b;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
+.installbtn:hover,
 .signupbtn:hover {
-    font-size: 17px;
-    color: white;
-
+  font-size: 17px;
+  color: white;
 }
 
 .loginbtn {
-    background-color: white;
-    border-radius: 21px;
-    color: black;
-    font-weight: bold;
-    padding: 10px;
-    width: 79px;
-    cursor: pointer;
-   text-decoration: none;
-    
+  background-color: white;
+  border-radius: 21px;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  width: 79px;
+  cursor: pointer;
 }
 
 .loginbtn:hover {
-    background-color: rgb(8, 219, 71);
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
-
+  background-color: #E54D94;
+  color: white;
+  font-size: 17px;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Navbars */
+.navbar li {
+  padding: 10px 0px;
+  list-style: none;
+}
+
+  .navbar li span:hover {
+  color: rgb(253, 253, 253);
+  font-weight: bold;
+}
+
+.navbar2 li {
+  display: inline-block;
+  list-style: none;
+  padding: 10px 0px;
+  margin-right: 20px;
+}
+
+.navbar2 li span:hover {
+  color: white;
+  font-weight: bold;
+}
+
+/* Optional: layout control for the overall container */
+.top.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
