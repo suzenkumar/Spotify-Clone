@@ -4,22 +4,18 @@ A responsive Spotify web UI clone built with HTML, CSS, and JavaScript. This pro
 
 ## 📸 Screenshots
 
-![Screenshot 1](Screenshot 2025-07-26 082017.png)
-
+![Screenshot 1](Screenshot%202025-07-26%20082017.png)
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- CSS3
-- Google Fonts
+- HTML5  
+- CSS3  
+- Google Fonts  
 - Font Awesome / Icons (Optional)
 
 ## ✨ Features
 
-- 🎧 Responsive and modern Spotify UI
-- 🧭 Sidebar with Home, Search, and Library sections
-- 🎶 Playlist cards with album covers
+- 🎧 Responsive and modern Spotify UI  
+- 🧭 Sidebar with Home, Search, and Library sections  
+- 🎶 Playlist cards with album covers  
 - 🌙 Dark theme styling
-
-
-
